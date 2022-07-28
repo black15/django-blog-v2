@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        {% block styles %}      {% endblock styles %}
+        <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+        <div class="container">
+                
+                <a id="header" href="{% url 'blog:post_list' %}"> <h1 class="header">Django <i class="fa-solid fa-user-pen"></i></h1></a>
+                {% block content %}{% endblock content %}
+        </div>
+</body>
+        {% block scripts %}{% endblock scripts %}
+</html>

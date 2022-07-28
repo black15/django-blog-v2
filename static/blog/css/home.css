@@ -1,0 +1,81 @@
+hr {
+        background-color: rgb(226, 226, 226);
+        border: none;
+        margin: 10px 0;
+}
+hr.one {
+        height: 1.9px;
+}
+hr.two {
+        height: 1px;
+}
+
+.post {
+        background-color: #fff;
+        margin: 15px 20px;
+        width: 75%;
+        padding: 15px;
+}
+.post h2 {
+        margin-bottom: 5px;
+}
+.post h2 a {
+        text-decoration: none;
+        color: rgb(56, 56, 56);
+        text-transform: capitalize;
+        padding-left: 5px;
+        
+}
+.post .author {
+        margin-top: 3px;
+        padding-left: 10px;
+}
+.post .author i {
+        color: rgb(56, 56, 56);
+}
+.post .body {
+        padding-left: 15px;
+}
+.post .content {
+        margin-top: 10px;
+        display: flex;
+        /* justify-content: center; */
+        /* align-items: center; */
+}
+.post .read-more {
+        margin: 20px 0;
+        text-align: right;
+}
+.post .read-more a {
+        text-decoration: none;
+        background-color: rgb(56, 56, 56);
+        color: aliceblue;
+        padding: 7px;
+        border-radius: 5px;
+        margin-right: 5px;
+}
+
+.post .date {
+        color: rgba(100, 100, 100, 0.85);
+}
+
+.post .tags a {
+        text-decoration: none;
+        color: rgb(56, 56, 56);
+}
+.post .tags a:hover {
+        text-decoration: underline;
+}
+
+
+/*      --- pagination ---      */
+.pagination {
+        text-align: center;
+        margin: 30px;
+        font-size: large;
+}
+.pagination .step-links a i {
+        color: rgb(65, 65, 65);
+        font-size: large;
+
+}

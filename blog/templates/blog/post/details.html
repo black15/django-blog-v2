@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% load static %}
+{% block styles %}
+        <!-- Added Styles -->
+        <link rel="stylesheet" href="{% static 'blog/css/details.css' %}">
+{% endblock styles %}
+
+{% block title %} {{post.title}} {% endblock title %}
+
+{% block content %}
+ {% if post %}
+
+  <div class="post">
+
+    <div class="post-img">
+      <img src="https://moeara.com/wp-content/uploads/2022/03/Sony-boosts-Crunchyrolls-menu-why-is-anime-its-biggest-streaming.jpg">
+    </div>
+
+    <p class="date"><br>
+      <span>By: </span> <span class="lighter">{{ post.author }}</span> <span>,at </span> <span class="lighter">{{ post.publish.date }}</span>
+    </p><br>
+
+    <h1 class="title">{{ post.title }}</h1>
+    
+    <div class="post-body">
+      {{ post.body|linebreaks }}
+    </div>
+    
+    <p class="share-this-post">
+      <a href="{% url 'blog:share_post' post.id %}">Share this post  <span class="iconify-inline" data-icon="logos:google-gmail" data-width="19"></span>
+      </a>
+    </p>
+    
+    <div class="similar">
+      {% if similar_posts %}
+        <h2>Similar posts</h2>
+        {% for post in similar_posts %}
+          <p>
+            <a href="{{post.get_absolute_url}}">{{post.title}}</a>
+          </p>
+        {% endfor %}
+      {% endif %}
+    </div>
+
+    <div class="comments">
+      {% with comments.count as total_comments %}
+        <h2>{{ total_comments }} Comment{{ total_comments|pluralize }}</h2>
+      {% endwith %}
+      {% for comment in comments %}
+        <div class="comment">
+          <p class="info">
+            {{ comment.name }}
+          </p>
+          {{ comment.body|linebreaks }}
+          <p class="comment-date">
+            {{ comment.created.date }}
+          </p>
+        </div>
+        {% empty %}
+          <p>There are no comments yet.</p>
+      {% endfor %}
+    </div>
+
+    <div class="comment-form">
+      {% if comment_add %}
+        <h2>Comment added succesfully !</h2>
+      {% else %}
+
+        <p class="post-cmnt">
+          Post a Comment
+        </p>
+        <div class="form">
+          <form action="" method="post">
+            {% csrf_token %}
+            {% for field in form %}
+              <div class="input-block">
+                {{field.error}}
+                {{field}}
+              </div>
+            {% endfor %}
+            <p><input type="submit" value="Comment"></p>
+          </form>
+        </div>
+      {% endif %}
+    </div>
+    
+  </div>
+  
+ {% endif %}
+{% endblock %}
+
+{% block scripts %}
+  <script src="{% static 'blog/js/iconify.min.js' %}"></script>
+{% endblock scripts %}

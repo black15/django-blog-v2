@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+{% block styles %}
+        <!-- Added Styles -->
+        <link rel="stylesheet" href="{% static 'blog/css/home.css' %}">
+{% endblock styles %}
+
+{% block title %}Blog Home{% endblock title %}
+
+{% block content %}
+ 
+  <div class="wrapper">
+
+    {% if tag %}
+      <div class="tag">
+        <h2>Posts tagged with "{{ tag.name }}"</h2>
+      </div>
+    {% endif %}
+
+    <div class="posts">
+    {% for post in posts %}
+      <div class="post">
+        <h2>
+          <a href="{{ post.get_absolute_url }}">
+            {{ post.title }}
+          </a>
+        </h2>
+        <hr class="one">
+        <p class="author"><small><i class="fa-solid fa-user-pen"></i> {{ post.author }} </small></p>
+
+        <div class="content">
+          <img src="https://i.pinimg.com/originals/fe/e8/65/fee865e337acd647272d302ddca8d412.png" width="200">
+          <p class="body">
+            {{ post.body|truncatewords:30 }}
+          </p>
+          
+        </div>
+
+        <div class="read-more">
+          <a href="{{ post.get_absolute_url }}">
+            READ MORE
+          </a>
+        </div>
+
+        <hr class="two">
+
+        <p class="date">
+        Published {{ post.publish.date }} 
+        </p>
+
+        <p class="tags">
+                {% for tag in post.tags.all %}
+                  <a href="{% url "blog:post_list_by_tag" tag.slug %}">
+                  {{ tag.name }}
+                  </a>
+                  {% if not forloop.last %}, {% endif %}
+                {% endfor %}
+        </p>
+        
+      </div>
+    {% endfor %}
+    </div>
+
+  </div>
+
+ {% include 'blog/paginator.html' with page=posts %}
+{% endblock %}

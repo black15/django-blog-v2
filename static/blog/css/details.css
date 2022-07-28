@@ -1,0 +1,139 @@
+body {
+        background-color: #fff;
+}
+.post {
+        width: 55%;
+        margin: 15px auto;
+        background-color: #fff;
+        line-height: 2;
+}
+.post-img {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+}
+.post-img img {
+        margin: 10px 0;
+        width: 100%;
+}
+
+.date {
+        width: 80%;
+        text-align: left;
+}
+.date span {
+        color: #222;
+        font-weight: 600;
+}
+.date span.lighter {
+        color: #444;
+        font-weight: 500;
+        border-bottom: rgba(114, 114, 114, 0.486) 1.2px solid;
+}
+
+.post h1.title {
+        color: #222;
+        font-weight: 600;
+        text-transform: capitalize;
+}
+
+.post .post-body {
+        color: #444;
+        line-height: 2.2;
+}
+
+.share-this-post {
+        border-top: 1px solid rgba(114, 114, 114, 0.486);
+        margin-top: 25px;
+        padding-top: 10px;
+        text-align: center;
+}
+.share-this-post a {
+        color: #444;
+        text-decoration: none;
+}
+.iconify-inline {
+        margin-left: 10px;
+}
+
+.similar a {
+        text-decoration: none;
+        text-transform: capitalize;
+        font-weight: 500;
+        color: #2196f3;
+}
+
+.comments {
+        background-color: rgb(255, 255, 255);
+}
+.comment {
+        color: #444;
+        margin: 10px 0;
+        padding-bottom: 5px;
+        border-bottom: 1px solid rgba(114, 114, 114, 0.486);
+}
+.comment .info {
+        font-weight: 600;
+        color: #444;
+        text-transform: capitalize;
+}
+.comment .comment-date {
+        text-align: right;
+}
+
+.comment-form .input-block {
+        display: inline;
+        justify-content: center;
+        align-items: center;
+        
+}
+.comment-form .input-block input {
+        width: 49%;
+}
+.comment-form .input-block textarea {
+        width: 99%;
+        display: inline-block;
+        height: 150px;     
+        font-size: 14px;
+        resize: none;
+        overflow: auto;
+}
+.comment-form .input-block input, .comment-form .input-block textarea {
+        border: 1px solid #d1d1d1;
+        outline: none;
+        background: rgb(61, 60, 71);
+        padding: 8px 15px;
+        margin: 10px 0;    
+        max-width: 100%;   
+}
+.comment-form input[type='submit'] {
+        background-color: #2196f3;
+        border: none;
+        outline: none;
+        padding: 12px 24px;
+        border-radius: 3px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1050px) {
+        .post {
+                width: 70%;
+                margin: 15px auto;
+        }
+        .post h1.title {
+                font-size: 26px;
+        }
+
+}
+@media screen and (max-width: 850px) {
+        .post {
+                width: 80%;
+                margin: 15px auto;
+        }
+        .post h1.title {
+                font-size: 22px;
+        }
+}
