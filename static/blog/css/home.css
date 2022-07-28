@@ -10,10 +10,19 @@ hr.two {
         height: 1px;
 }
 
+.wrapper {
+        display: flex;
+        flex-wrap: wrap;
+}
+
+/* Posts Section */
+.posts {
+        width: 75%;
+}
+
 .post {
         background-color: #fff;
         margin: 15px 20px;
-        width: 75%;
         padding: 15px;
 }
 .post h2 {
@@ -66,6 +75,15 @@ hr.two {
 .post .tags a:hover {
         text-decoration: underline;
 }
+
+
+
+/*      --- Side Bar Section ---      */
+.wrapper .side-bar {
+        width: 20%;
+        background-color: #fff;
+} 
+
 
 
 /*      --- pagination ---      */
