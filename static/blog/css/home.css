@@ -24,6 +24,7 @@ hr.two {
         background-color: #fff;
         margin: 15px 20px;
         padding: 15px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 .post h2 {
         margin-bottom: 5px;
@@ -44,6 +45,7 @@ hr.two {
 }
 .post .body {
         padding-left: 15px;
+        color: #495057;
 }
 .post .content {
         margin-top: 10px;
@@ -57,7 +59,7 @@ hr.two {
 }
 .post .read-more a {
         text-decoration: none;
-        background-color: rgb(56, 56, 56);
+        background-color: #2196f3;
         color: aliceblue;
         padding: 7px;
         border-radius: 5px;
@@ -70,7 +72,7 @@ hr.two {
 
 .post .tags a {
         text-decoration: none;
-        color: rgb(56, 56, 56);
+        color: #2196f3;
 }
 .post .tags a:hover {
         text-decoration: underline;
@@ -81,9 +83,131 @@ hr.two {
 /*      --- Side Bar Section ---      */
 .wrapper .side-bar {
         width: 20%;
-        background-color: #fff;
-} 
+        margin: 15px auto;
+        /* position: fixed; */
+        /* right: 2%;
+        z-index: 1; */
+}
 
+/* Styles in commun */
+.side-bar .search-bar, .side-bar .categories-bar, .latest-posts-bar, .tags-bar, .contact-me-bar {
+        background-color: #fff;
+        width: 90%;
+        margin: 0 auto;
+        border: rgba(204, 204, 204, 0.651) 1px solid;
+        padding: 15px 40px;
+        /* box-shadow: 0px 0px 0.3px 0.1px #888888; */
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        /* box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset; */
+        line-height: 2.2;
+        margin-bottom: 40px;
+}
+.side-bar .search-bar p, .categories-bar p, .latest-posts-bar p, .tags-bar p, .contact-me-bar p {
+        letter-spacing: 0.2px;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        color: #232323;
+        margin-top: 10px;
+        margin-bottom: 34px;
+        width: 100%;
+}
+
+/* Search */
+.side-bar .search-bar form {
+        margin-bottom: 34px;
+        display: flex;
+}
+.side-bar .search-bar input {
+        width: 90%;
+        padding: .375rem .75rem;
+        border: 1px solid #ced4da;
+        color: #495057;
+        line-height: 1.5;
+        background-color: #fff;
+        border-radius: 0.25rem 0 0 0.25rem;
+        font-size: 14px;
+}
+.side-bar .search-bar input:focus {
+        outline: none !important;
+        border:1px solid #2196f3;
+        box-shadow: 0 0 10px #719ECE;
+      }
+.side-bar .search-bar button {
+        padding: .375rem .75rem;
+        color: #f8f8f8;
+        background-color: #2196f3;
+        border: none;
+        outline: none;
+        border-radius: 0 0.25rem 0.25rem 0;
+        cursor: pointer;
+}
+
+
+/* Latest posts */
+.side-bar .latest-posts-bar .latest-post {
+        width: 100%;
+        margin: 0;
+        text-align: left;
+}
+.side-bar .latest-posts-bar .latest-post a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        margin-bottom: 15px;
+        text-align-last: left;
+}
+.side-bar .latest-posts-bar .latest-post a img {
+        width: 120px;
+        min-height: 100%;
+        margin-right: 10px;
+}
+.side-bar .latest-posts-bar .latest-post a p {
+        color: #232323;
+        font-weight: 500;
+        font-size: 16px;
+        margin: 0 auto;
+}
+
+.side-bar .latest-posts-bar .latest-post a p small {
+        display: block;
+        color: #495057;
+        font-weight: normal;
+}
+
+
+/* Tags */
+.side-bar .tags-bar ul {
+        list-style: none;
+        text-transform: capitalize;
+        display: flex;
+        flex-wrap: wrap;
+}
+.side-bar .tags-bar ul li {
+        width: 50%;
+        text-align: center;
+        text-align: left;
+}
+.side-bar .tags-bar ul li a {
+        text-decoration: none;
+        color: #495057;
+}
+.side-bar .tags-bar ul li a:hover {
+        font-weight: 600;
+        color: #2196f3;
+}
+
+
+/* Contact me */
+.side-bar .contact-me-bar .socials a i {
+        color: #2196f3;
+        font-size: large;
+        margin-right: 10px;
+}
+.side-bar .contact-me-bar .socials {
+        text-align: center;
+}
 
 
 /*      --- pagination ---      */

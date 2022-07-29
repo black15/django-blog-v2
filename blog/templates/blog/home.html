@@ -8,14 +8,14 @@
 {% block title %}Blog Home{% endblock title %}
 
 {% block content %}
- 
-  <div class="wrapper">
 
-    {% if tag %}
-      <div class="tag">
-        <h2>Posts tagged with "{{ tag.name }}"</h2>
-      </div>
-    {% endif %}
+  {% if tag %}
+    <div class="tag">
+      <h2>Posts tagged with "{{ tag.name }}"</h2>
+    </div>
+  {% endif %}
+  
+  <div class="wrapper">
 
     <div class="posts">
     {% for post in posts %}
@@ -65,27 +65,62 @@
 
       <!-- Search bar -->
       <div class="search-bar">
-        <input type="search" name="search" id="">
+        <p>Search</p>
+        <form method="get">
+          <input type="search" name="search" placeholder="Search here...">
+          <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
       </div>
 
-      <!-- Categories bar -->
+      {% comment %} <!-- Categories bar -->
       <div class="categories-bar">
-
-      </div>
+        <p>Categories</p>
+      </div> {% endcomment %}
 
       <!-- Latest posts bar -->
       <div class="latest-posts-bar">
-
+        <p>Latest posts</p>
+        <div class="latest-post">
+          <a href="#">
+            <img src="https://www.teahub.io/photos/full/186-1866966_death-note-episode-1-english-dub-32-wide.jpg" alt="">
+            <p>Lorem ipsum dolor,</p>
+          </a>
+        </div>
+        <div class="latest-post">
+          <a href="#">
+            <img src="https://cdn.realsport101.com/images/ncavvykf/epicstream/e34fb6af49f1cceecb2580e97a31db4b3d021f83-1400x700.jpg?rect=78,0,1244,700&w=700&h=394&dpr=2" alt="">
+            <p>Lorem ipsum dolor, <small>22 Fivri 2022</small></p>
+          </a>
+        </div>
+        <div class="latest-post">
+          <a href="#">
+            <img src="https://media.indiedb.com/images/groups/1/1/84/okay.gif" alt="">
+            <p>Lorem ipsum dolor,</p>
+          </a>
+        </div>
       </div>
 
       <!-- Tags bar -->
       <div class="tags-bar">
-
+        <p>Tags</p>
+        <ul>
+          {% for tag in tags %}
+            <li><a href="{% url "blog:post_list_by_tag" tag.slug %}">
+              {{ tag.name }}
+            </a></li>
+          {% endfor %}
+        </ul>
       </div>
       
       <!-- Contact bar -->
       <div class="contact-me-bar">
-
+        <p>Find me at</p>
+        <div class="socials">
+          <a href="https://www.facebook.com/unknownkid18" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://github.com/black15" target="_blank"><i class="fa-brands fa-github"></i></a>
+          <a href="https://twitter.com/Oussama1337" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/in/oussama-talha-443960237/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
       </div>
 
     </div>

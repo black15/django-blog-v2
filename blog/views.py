@@ -21,7 +21,8 @@ def posts_list(request, tag_slug=None):
         
         _tag = None
         published_posts         = Post.published_only.all().order_by('publish')
-        
+        alltags                 = Post.tags.all() 
+
         if tag_slug:
                 _tag = get_object_or_404(
                         Tag,
@@ -44,6 +45,7 @@ def posts_list(request, tag_slug=None):
         context['posts']        = posts
         context['page']         = page
         context['tag']          = _tag
+        context['tags']         = alltags
         
         return render(request, 'blog/home.html', context)
 
