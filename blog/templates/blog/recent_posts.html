@@ -1,0 +1,12 @@
+{% for post in recent_posts %}
+
+<div class="latest-post">
+ <a href="{{post.get_absolute_url}}">
+  {% if post.post_img %}
+   <img src="{{post.post_img.url}}" width="200">
+  {% endif %}
+  <p> {{post.title | truncatewords:4}} <small> {{post.publish.date}} </small></p>
+ </a>
+</div>
+
+{% endfor %}

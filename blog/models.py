@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
@@ -24,6 +25,7 @@ class Post(models.Model):
         created         = models.DateTimeField("Created", auto_now=True)
         updated         = models.DateTimeField("Updated", auto_now_add=True)
         status          = models.CharField("Status", max_length=10, default='draft', choices=STATUS_CHOICES)
+        post_img        = models.ImageField(verbose_name="Post Image", upload_to='post_images/%y/%m/%d', max_length=200, default="post_images/default.jpg", blank=True, null=True)
 
         tags = TaggableManager()
 

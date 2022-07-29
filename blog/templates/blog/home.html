@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
+{% load blog_tags %}
+
 {% block styles %}
         <!-- Added Styles -->
         <link rel="stylesheet" href="{% static 'blog/css/home.css' %}">
@@ -8,7 +10,6 @@
 {% block title %}Blog Home{% endblock title %}
 
 {% block content %}
-
   {% if tag %}
     <div class="tag">
       <h2>Posts tagged with "{{ tag.name }}"</h2>
@@ -29,7 +30,9 @@
         <p class="author"><small><i class="fa-solid fa-user-pen"></i> {{ post.author }} </small></p>
 
         <div class="content">
-          <img src="https://i.pinimg.com/originals/fe/e8/65/fee865e337acd647272d302ddca8d412.png" width="200">
+          {% if post.post_img %}
+            <img src="{{post.post_img.url}}" width="200">
+          {% endif %}
           <p class="body">
             {{ post.body|truncatewords:30 }}
           </p>
@@ -79,25 +82,8 @@
 
       <!-- Latest posts bar -->
       <div class="latest-posts-bar">
-        <p>Latest posts</p>
-        <div class="latest-post">
-          <a href="#">
-            <img src="https://www.teahub.io/photos/full/186-1866966_death-note-episode-1-english-dub-32-wide.jpg" alt="">
-            <p>Lorem ipsum dolor,</p>
-          </a>
-        </div>
-        <div class="latest-post">
-          <a href="#">
-            <img src="https://cdn.realsport101.com/images/ncavvykf/epicstream/e34fb6af49f1cceecb2580e97a31db4b3d021f83-1400x700.jpg?rect=78,0,1244,700&w=700&h=394&dpr=2" alt="">
-            <p>Lorem ipsum dolor, <small>22 Fivri 2022</small></p>
-          </a>
-        </div>
-        <div class="latest-post">
-          <a href="#">
-            <img src="https://media.indiedb.com/images/groups/1/1/84/okay.gif" alt="">
-            <p>Lorem ipsum dolor,</p>
-          </a>
-        </div>
+        <p>Recent posts  </p>
+        {% recent_posts 4 %}
       </div>
 
       <!-- Tags bar -->

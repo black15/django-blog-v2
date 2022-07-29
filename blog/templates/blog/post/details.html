@@ -12,9 +12,11 @@
 
   <div class="post">
 
+    {% if post.post_img %}
     <div class="post-img">
-      <img src="https://moeara.com/wp-content/uploads/2022/03/Sony-boosts-Crunchyrolls-menu-why-is-anime-its-biggest-streaming.jpg">
+      <img src="{{post.post_img.url}}">
     </div>
+    {% endif %}
 
     <p class="date"><br>
       <span>By: </span> <span class="lighter">{{ post.author }}</span> <span>,at </span> <span class="lighter">{{ post.publish.date }}</span>
