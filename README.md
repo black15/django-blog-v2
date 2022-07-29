@@ -9,3 +9,13 @@
 </p>
 
 ## Phone Demo
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/38563357/181848683-7d83c398-66d7-4be9-9485-b9ee2f258c56.jpg" width="500" title="Full screen">
+  <img src="https://user-images.githubusercontent.com/38563357/181848694-d126ef91-a8d4-48ad-b5ac-6a576a93ab85.jpg" width="500">
+  <img src="https://user-images.githubusercontent.com/38563357/181848700-99c0d196-6ddf-44ee-8859-76c657a62c8e.jpg" width="500">
+  <img src="https://user-images.githubusercontent.com/38563357/181848708-8ecd849e-bc67-48de-8cd8-e2ac73f030fc.jpg" width="500">
+</p>
+![photo_2022-07-29_22-59-39](https://user-images.githubusercontent.com/38563357/181848683-7d83c398-66d7-4be9-9485-b9ee2f258c56.jpg)
+![photo_2022-07-29_22-59-38](https://user-images.githubusercontent.com/38563357/181848694-d126ef91-a8d4-48ad-b5ac-6a576a93ab85.jpg)
+![photo_2022-07-29_22-38-03 (2)](https://user-images.githubusercontent.com/38563357/181848700-99c0d196-6ddf-44ee-8859-76c657a62c8e.jpg)
+![photo_2022-07-29_22-38-01](https://user-images.githubusercontent.com/38563357/181848708-8ecd849e-bc67-48de-8cd8-e2ac73f030fc.jpg)
