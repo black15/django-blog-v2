@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.mail import send_mail
 from taggit.models import Tag
-from django.db.models import Count
+from django.db.models import Count, Q
 
 from blog.forms import SharePostViaEmail, CommentForm
 from .models import Post, Comment
@@ -49,6 +49,23 @@ def posts_list(request, tag_slug=None):
         
         return render(request, 'blog/home.html', context)
 
+# Search function 
+def search_posts(request):
+        context = {}
+        try:
+                query   = request.GET['search']
+                posts   = Post.published_only.filter(Q(title__icontains=query) | Q(slug__icontains=query) | Q(body__icontains=query) | Q(author__username__icontains=query) | Q(tags__name__icontains=query))
+                
+                if posts:
+                        context['filtered_posts'] = posts
+                        context['query']          = query
+                        return render(request, 'blog/home.html', context)
+                else :
+                        return redirect('blog:post_list')
+        except KeyError:
+                return redirect('blog:post_list')
+
+# List post detail in one page 
 def post_details(request, slug, year, month, day):
         context = {}
 
@@ -95,6 +112,7 @@ def post_details(request, slug, year, month, day):
 
         return render(request, 'blog/post/details.html', context)
 
+# Share post by E-mail 
 def share_post(request, post_id):
         context = {}
 

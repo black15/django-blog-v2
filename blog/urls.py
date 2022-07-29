@@ -9,4 +9,5 @@ urlpatterns = [
         # path('', PostsList.as_view(), name='post_list'),
         path('p/<slug:slug>/<int:year>/<int:month>/<int:day>/', post_details, name='post_details'),
         path('p/share/<int:post_id>/', share_post, name='share_post'),
+        path('search/', search_posts, name='search_posts'),
 ]
