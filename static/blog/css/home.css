@@ -221,3 +221,50 @@ hr.two {
         font-size: large;
 
 }
+
+@media screen and (max-width: 1700px) {
+        .wrapper {
+                display: block;
+        }
+        .wrapper .posts {
+                width: 90%;
+                margin: 15px auto;
+        }
+        .wrapper .side-bar {
+                width: 90%;
+                margin: 15px auto;
+        }
+}
+
+@media screen and (max-width: 870px) {
+        .wrapper {
+                display: block;
+        }
+        .wrapper .posts {
+                width: 100%;
+                margin: 15px auto;
+        }
+        .wrapper .side-bar {
+                width: 100%;
+                margin: 35px auto;
+        }
+}
+
+@media screen and (max-width: 660px) {
+        .post .content {
+                margin-top: 10px;
+                display: block;
+                text-align: center;
+        }
+        .post .content img {
+                width: 90%;
+        }
+        .post .content p.body {
+                text-align: left;
+        }
+
+        .side-bar .tags-bar ul li {
+                text-align: center;
+        }
+
+}
