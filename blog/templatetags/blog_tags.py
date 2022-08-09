@@ -9,5 +9,5 @@ def total_posts():
 
 @register.inclusion_tag('blog/recent_posts.html')
 def recent_posts(num=4):
-        recent = Post.published_only.order_by('publish')[:num]
+        recent = Post.published_only.order_by('-publish')[:num]
         return {'recent_posts': recent}

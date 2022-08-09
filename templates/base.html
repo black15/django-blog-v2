@@ -11,11 +11,30 @@
         <title>{% block title %}{% endblock title %}</title>
 </head>
 <body>
-        <div class="container">
-                
-                <a id="header" href="{% url 'blog:post_list' %}"> <h1 class="header">Django <i class="fa-solid fa-user-pen"></i></h1></a>
-                {% block content %}{% endblock content %}
-        </div>
+<div class="container">
+
+   <nav>
+      <a id="header" href="{% url 'blog:post_list' %}"> <h1 class="header">DBlogo <i class="fa-solid fa-user-pen"></i></h1></a>
+      <div class="nav-list">
+         <ul>
+            <li class="active"><a href="{% url 'blog:post_list' %}">Home</a></li>
+            <li><a href="https://github.com/black15" target="_blank">Contact</a></li>
+            <li>
+               <div class="dropdown">
+                  <i class="fa-solid fa-user-astronaut"></i>
+                  <div class="dropdown-menu">
+                     <a href="">New Blog <i class="fa-solid fa-plus"></i></a>
+                     <a href="">Profile <i class="fa-solid fa-user"></i></a>
+                  </div>
+               </div>
+            </li>
+         </ul>
+      </div>
+   </nav>
+
+   {% block content %}{% endblock content %}
+
+</div>
 </body>
         {% block scripts %}{% endblock scripts %}
 </html>

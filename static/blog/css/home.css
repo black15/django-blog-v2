@@ -53,6 +53,9 @@ hr.two {
         /* justify-content: center; */
         /* align-items: center; */
 }
+.post .content img {
+        width: 350px;
+}
 .post .read-more {
         margin: 20px 0;
         text-align: right;
